@@ -38,7 +38,7 @@ jobs:
       - name: Regenerate docs dir
         run: |
           mkdir docs
-          grip README.md --export docs/index.html
+          cp README.md docs/index.md
           ls **
           git add . --force
           git status
