@@ -39,3 +39,4 @@ jobs:
         run: |
           mkdir docs
           grip README.md --export docs/index.html
+          ls **
