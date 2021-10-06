@@ -42,7 +42,7 @@ jobs:
           ls **
           git add . --force
           git status
-          git config --global user.email "$GH_EMAIL"
-          git config --global user.name "$GH_USER"
+          git config --global user.email "legmatt0@gmail.com"
+          git config --global user.name "oxabz"
           git commit -m "Update auto-generated documentation."
           git push --set-upstream origin master
