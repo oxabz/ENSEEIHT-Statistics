@@ -11,7 +11,7 @@
 |Moyenne Arythmétique ($\bar x_A$)| $\bar x_A = {1\over n} \sum_{i=0}^{n} x_i$|$W = {1\over \sum_{i=0}^{n} w_i} \sum_{i=0}^{n} w_ix_i$|
 |Moyenne Harmonique ($\bar x_H$)| $\overline{x}_{\rm H} = \frac{n}{\sum_{i=1}^n{1 \over x_i}}$|$\frac{\sum_{i=1}^n w_i}{\sum_{i=1}^n \frac{w_i}{x_i}}$|
 |Moyenne Geometrique ($\bar x_G$)| $\overline{x}_{\rm G} = \sqrt[n]{\prod_{i=1}^n x_i}$ |$\left(\prod_{i=1}^n x_i^{w_i}\right)^{1 / \sum_{i=1}^n w_i}$ |
-|Moyenne Geometrique ($\bar x_G$)| $\overline{x}_{\rm Q} = \sqrt{\frac{1}{n}\sum_{i=1}^n{x_i^2}}$ |$\sqrt{\frac{1}{\sum_{i=1}^n w_i}\sum_{i=1}^n{w_i x_i^2}}$ |
+| Moyenne Geometrique ($\bar x_G$)| $\overline{x}_{\rm Q} = \sqrt{\frac{1}{n}\sum_{i=1}^n{x_i^2}}$ |$\sqrt{\frac{1}{\sum_{i=1}^n w_i}\sum_{i=1}^n{w_i x_i^2}}$ |
 
 #### Quantile
 
