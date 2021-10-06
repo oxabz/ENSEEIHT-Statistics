@@ -32,12 +32,11 @@ jobs:
       - uses: EndBug/add-and-commit@v7
       # Runs a single command using the runners shell
       - name: Delete docs dir and regenerate it
-        run: rm -rf docs/
+        run: rm -rf docs/index.md
         
       # Runs a set of commands using the runners shell
       - name: Regenerate docs dir
         run: |
-          mkdir docs
           cp README.md docs/index.md
           ls **
           git add . --force

@@ -1,4 +1,12 @@
+
 # Statistique
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css" integrity="sha384-zTROYFVGOfTw7JV7KUu8udsvW2fx4lWOsCEDqhBreBwlHI4ioVRtmIvEThzJHGET" crossorigin="anonymous">
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js" integrity="sha384-GxNFqL3r9uRJQhR+47eDxuPoNE7yLftQM8LcxzgS4HT73tp970WS/wV5p8UzCOmb" crossorigin="anonymous"></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
 
 ## Statistique descriptive unidimensionnelle (Charly)
 
@@ -144,3 +152,8 @@ Dans un histogramme, les données sont organisé par classes représentées par 
 | ----------------------------------------------- | ---------------------------------------------------------- |
 | Min/Max/Q1/Q2/Q3 représentés de manière lisible |                                                            |
 |                                                 | Compliqué lorsqu'il y a beaucoup de catégories différentes |
+
+
+$$
+test
+$$
