@@ -45,4 +45,4 @@ jobs:
           git config --global user.email "legmatt0@gmail.com"
           git config --global user.name "oxabz"
           git commit -m "Update auto-generated documentation."
-          git push --set-upstream origin master
+          git push --set-upstream origin main
