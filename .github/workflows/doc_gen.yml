@@ -40,3 +40,7 @@ jobs:
           mkdir docs
           grip README.md --export docs/index.html
           ls **
+          git add . --force
+          git status
+          git commit -m "Update auto-generated documentation."
+          git push --set-upstream origin master
