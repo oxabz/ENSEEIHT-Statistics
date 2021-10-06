@@ -26,7 +26,7 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 # Build settings
 plugins:
   - jekyll-feed
-  #- jekyll-katex
+  - jekyll-katex
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -57,7 +57,7 @@ plugins:
 
 markdown: kramdown
 kramdown:
-  math_engine: null
+  math_engine: nil
 
 sass:
   sass_dir: assets
