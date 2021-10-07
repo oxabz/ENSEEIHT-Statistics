@@ -7,18 +7,17 @@
 
 #### Moyennes
 
-|Nom|Moyenne brute|Moyenne pondérée|
-|---|--|--|
-|Moyenne Arythmétique ($ \bar x_A $)| $\bar x_A = {1\over n} \sum_{i=0}^{n} x_i$|$W = {1\over \sum_{i=0}^{n} w_i} \sum_{i=0}^{n} w_ix_i$|
-| Moyenne Quadratic ($\bar x_Q$)| $\overline{x}_{\rm Q} = \sqrt{\frac{1}{n}\sum_{i=1}^n{x_i^2}}$ |$W = \sqrt{\frac{1}{\sum_{i=1}^n w_i}\sum_{i=1}^n{w_i x_i^2}}$ |
+- symbole : $\bar x_A$ ou $\bar x$
+- formule : 
+  - non-pondéré : $\bar x_A = {1\over n} \sum_{i=0}^{n} x_i$ 
+  - pondéré :  $W = {1\over \sum_{i=0}^{n} w_i} \sum_{i=0}^{n} w_ix_i$
 
 La moyenne est un parametre visant à resumer toutes les données en une seul valeur.
 
-Une bone representation visuel de la moyenne est que la moyene le point quiminimise la distance cumulative avec tous les données : 
-![](Moyene.png) 
+Une bone representation visuel de la moyenne est que la moyene le point qui minimise la distance cumulative avec tous les données :
+![](Moyene.png)
 
 On peut vouloir apporter une importance non uniforme aux donnés pour ce faire on va utiliser des poids qui vont multiplier chacune des valeurs de donnés.
-
 
 #### Quantile
 
@@ -44,9 +43,46 @@ Un quartile est un quantile de valeur specifique. Il existe troi quartile Q1, Q2
 
 La mediane est le Q2 elle indique la valeur du millieu des donnés. Elle est souvant utiliser en pair avec la moyenne arithmetic car elle est pas sensible aux extremes.
 
-Lorsque la mediane
+Lorsque la mediane est superieur a la moyenne c'est que il y a des petites valeurs extreme et lorsque la mediane est inferieure à la moyenne on a des grosse valeurs extreme 
 
 - Symbole : $Q2$ ou $Me$
+
+### Paramètre de dispersion
+
+Dispersion statistique : la dispersion statistique mesure la variabilité des valeurs d’une séries statistiques par rapport une valeur centrale (moyenne). Elle permet de déterminer la dispersion et l’écart entre les différentes valeurs
+
+#### Paramètres de dispersion absolue
+
+##### Étendue
+
+L'étendue est la différence entre la valeur minimale et maximale. 
+
+L'étendue de $X$ est $X_{max} - X_{min}$
+
+##### Écart absolu moyen
+Ce paramètre est la moyenne arithmétique de la valeur absolue des écarts à la moyenne. C'est donc la "distance moyenne à la moyenne".
+$\frac{1}{n}\sum_{i=1}^n \left|x_i - \overline{x}\right|$
+
+##### Equart-type
+L'écart-type est une mesure de dispersion par rapport à la moyenne.
+- Symbole :  $\sigma$
+- Formule : $p_i = P(X = x_i)$
+
+##### Variance
+La variance est une mesure de la dispersion des valeurs d'un échantillon ou d'une distribution de probabilité.
+- Symbole : $V$
+- Formule : $\sigma = \sqrt{V} = \sqrt{\frac{1}{n}\sum_{i=1}^n (x_i-\overline{x})^2} = \sqrt{\frac{1}{n}\sum_{i=1}^n x_i^2 - \overline{x}^2}$
+- 
+
+#### Paramètres de dispersion relative
+Les paramètres de dispersion relative permettent de comparer deux distributions à ordre de grandeur ou d’unité de mesure différente.
+- le coefficient interquartile relatif
+C.I.R.(X)  = (Xq3-Xq1)/ médiane X
+- l'écart moyen relatif
+E.M.R.(X)  = E.A.M.(X)  / moyenne(X)
+- le coefficient de variation
+C.V.(X)  = s(X)  / moyenne(X)
+
 
 #### Mise en application sur notre jeu de données
 
@@ -73,40 +109,6 @@ Cumulés|	1|	1|	11|	13|	5|	0|31|
 |Médiane|177,5|67,5|
 |1er quartile | 172,5 | 57,5 |
 |3e  quartile | 177,5 | 72,5 |
-
-### Paramètre de dispersion
-
-Dispersion statistique : la dispersion statistique mesure la variabilité des valeurs d’une séries statistiques par rapport une valeur centrale (moyenne). Elle permet de déterminer la dispersion et l’écart entre les différentes valeurs
-
-
-#### Paramètres de dispersion absolue
-
-##### Étendue
-
-L'étendue est la différence entre la valeur minimale et maximale. 
-
-L'étendue de $X = X_{max} - X_{min}$
-
-##### Écart absolu moyen
-Ce paramètre est la moyenne arithmétique de la valeur absolue des écarts à la moyenne. C'est donc la "distance moyenne à la moyenne".
-$\frac{1}{n}\sum_{i=1}^n \left|x_i - \overline{x}\right|$
-
-##### Equart-type
-L'écart-type est une mesure de dispersion par rapport à la moyenne.
-- Symbole :  $\sigma$
-
-##### Variance
-La variance est une mesure de la dispersion des valeurs d'un échantillon ou d'une distribution de probabilité.
-- Symbole : $V$
-
-#### Paramètres de dispersion relative
-Les paramètres de dispersion relative permettent de comparer deux distributions à ordre de grandeur ou d’unité de mesure différente.
-- le coefficient interquartile relatif
-C.I.R.(X)  = (Xq3-Xq1)/ médiane X
-- l'écart moyen relatif
-E.M.R.(X)  = E.A.M.(X)  / moyenne(X)
-- le coefficient de variation
-C.V.(X)  = s(X)  / moyenne(X)
 
 
 
@@ -142,7 +144,7 @@ Ce diagramme permet de représenter graphiquement la distribution des effectifs.
 
 ##### Représentation
 
-Pour cette partie, nous avons utilisé la suite de valeur générée de manière aléatoire décrite ci-dessous. Par exemple, avec cette dernière, si l'on veut l’effectif cumulé de la 3ème valeur (v3), on fait `1 + 2 + 1` soit `4`. Si on veut celle de la 5ème on fait `v3 + 3 + 2` soit `9`. 
+Pour cette partie, nous avons utilisé la suite de valeur générée de manière aléatoire décrite ci-dessous. Par exemple, avec cette dernière, si l'on veut l’effectif cumulé de la 3ème valeur (v3), on fait $1 + 2 + 1$ soit $4$. Si on veut celle de la 5ème on fait $v3 + 3 + 2$ soit $9$. 
 
 | x | y |
 |---|---|
@@ -190,17 +192,13 @@ On y retrouve la médiane, les quartiles, la valeur miniamle et maximale.
 
 ##### Représentation
 
-##### Conclusion
+Pour le diagramme ci-dessous, nous avons utilisé les données relatives au poid des personnes de la classe ainsi que la librairie [matplotlib](https://matplotlib.org/) de python.
 
-| Avantage(s)                                     | Inconvénient(s)                                            |
-| ----------------------------------------------- | ---------------------------------------------------------- |
-| Min/Max/Q1/Q2/Q3 représentés de manière lisible |                                                            |
-|                                                 | Compliqué lorsqu'il y a beaucoup de catégories différentes |
+![](BoxPlot.png)
 
+Sur ce diagramme, nous pouvons constater la médiane, barre orange dans la boite, la valeur minimale, trait du bas, la valeur maximale, trait du haut. La distance entre la valeur maximale ou la valeur minimale et la boîte représente chacune 25% de la totalité des valeurs. Cela fait que la boite en elle même représente 50% des valeurs.
 
-|titre||
-|--|--|
-|1|2|3|4|5|6|
+On peut aussi voir que la valeur `97,5` est considéré comme aberrante car elle n'est pas à l'intérieur de la moustache. Cela veut dire qu'elle mérite un réexamination pour voir si elle est vraiment aberrante ou non. Nous nous sommes rendu compte à terme que c'était bien le cas.
 
 ## Statistiques descriptives bidimensionnelles
 
@@ -228,14 +226,13 @@ Il est toujours possible, à l'aide de la loi conjointe, de retrouver les lois m
 
 si ${X(\Omega)= \{x_{1}, ... , x_{p}}\}$ et ${Y(\Omega)= \{y_{1}, ... , y_{p}}\}$,
 
-on a : ${\mathbb {P} (X = x_{i})=\sum _{j=1}^{q}\mathbb {P} (X = x_{i}, Y = y_{j})}$
+on a : ${{P} (X = x_{i})=\sum _{j=1}^{q} {P} (X = x_{i}, Y = y_{j})}$
 
 
 Si les composantes sont indépendantes on a la propriété suivante :
 
-${P}(X = x_{i})=\mathbb {P} (X \in I\ et\ Y \in J)}$
-P(X=xi , Y=yj)= P(X=xi) * P(Y=yj)
+${{P}(X = x_{i},Y = y_{j})= {P} (X = x_{i}) \times {P} (Y = y_{j})}$
 
 sinon dans le cas contraire on a:
 
-P(X=xi , Y=yj)= P(X=xi)*P(Y=yj | X=xi)
+${{P}(X = x_{i},Y = y_{j})= {P} (X = x_{i}) \times {P} (Y = y_{j} | X = x_{i})}$
