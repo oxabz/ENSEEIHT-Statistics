@@ -3,7 +3,7 @@
 
 ## Statistique descriptive unidimensionnelle (Charly)
 
-### Parametre de position
+### Paramètres de position
 
 #### Moyennes
 
@@ -12,16 +12,16 @@
   - non-pondéré : $\bar x_A = {1\over n} \sum_{i=0}^{n} x_i$ 
   - pondéré :  $W = {1\over \sum_{i=0}^{n} w_i} \sum_{i=0}^{n} w_ix_i$
 
-La moyenne est un parametre visant à resumer toutes les données en une seul valeur.
+La moyenne est un paramètre visant à resumer toutes les données en une seule valeur.
 
-Une bone representation visuel de la moyenne est que la moyene le point qui minimise la distance cumulative avec tous les données :
+Une bonne repésentation visuelle de la moyenne est que la moyenne est le point qui minimise la distance cumulative avec toutes les données :
 ![](Moyene.png)
 
-On peut vouloir apporter une importance non uniforme aux donnés pour ce faire on va utiliser des poids qui vont multiplier chacune des valeurs de donnés.
+On peut vouloir apporter une importance non uniforme aux données, pour ce faire on va utiliser des poids qui vont multiplier chacune des valeurs de données.
 
 #### Quantile
 
-Le quantile est un parametre de position qui permet de la valeur max des $N \over quantile$ premiers $x$
+Le quantile est un paramètre de position qui permet de connaître la valeur max des $N \over quantile$ premiers $x$
 
 - Symbole : $q_{quantile}$
 - formule : 
@@ -32,24 +32,24 @@ Le quantile est un parametre de position qui permet de la valeur max des $N \ove
 
 ##### Quartile
 
-Un quartile est un quantile de valeur specifique. Il existe troi quartile Q1, Q2 et Q3 qui represent respectivement 25% 50% et 75% des donnés
+Un quartile est un quantile de valeur spécifique. Il existe trois quartiles Q1, Q2 et Q3 qui représentent respectivement 25% 50% et 75% des données
 
 - Symboles :
   - $Q1$
   - $Q2$
   - $Q3$
 
-##### Mediane
+##### Médiane
 
-La mediane est le Q2 elle indique la valeur du millieu des donnés. Elle est souvant utiliser en pair avec la moyenne arithmetic car elle est pas sensible aux extremes.
+La médiane est le Q2, elle indique la valeur du milieu des données. Elle est souvent utilisée de pair avec la moyenne arithmétique car elle n'est pas sensible aux extrêmes.
 
-Lorsque la mediane est superieur a la moyenne c'est que il y a des petites valeurs extreme et lorsque la mediane est inferieure à la moyenne on a des grosse valeurs extreme 
+Lorsque la médiane est supérieure à la moyenne c'est qu'il y a de petites valeurs extrêmes et lorsque la médiane est inférieure à la moyenne on a de fortes valeurs extrêmes. 
 
 - Symbole : $Q2$ ou $Me$
 
-### Paramètre de dispersion
+### Paramètres de dispersion
 
-Dispersion statistique : la dispersion statistique mesure la variabilité des valeurs d’une séries statistiques par rapport une valeur centrale (moyenne). Elle permet de déterminer la dispersion et l’écart entre les différentes valeurs
+Dispersion statistique : la dispersion statistique mesure la variabilité des valeurs d’une série statistique par rapport à une valeur centrale (moyenne). Elle permet de déterminer la dispersion et l’écart entre les différentes valeurs.
 
 #### Paramètres de dispersion absolue
 
@@ -120,11 +120,11 @@ Il existe de nombreux types de diagramme permettant de representer des données 
 
 ##### Description
 
-Pour construire un diagramme en bâtons, il faut placer les points, correspondant à nos valeurs, sur un graphique et pour chaque point tracer un trait vertical qui part du point concerné et qui s’arrête sur l’axe des abscisses.
+Pour construire un diagramme en bâtons, il faut placer les points correspondant à nos valeurs sur un graphique, et pour chaque point tracer un trait vertical qui part du point concerné et qui s’arrête sur l’axe des abscisses.
 
 ##### Représentation
 
-Pour le diagramme suivant, nous avons utiliser cette suite de points générée de manière aléatoire :
+Pour le diagramme suivant, nous avons utilisé cette suite de points générée de manière aléatoire :
 
 |   x   |   y   |
 |---|---|
@@ -144,7 +144,7 @@ Ce diagramme permet de représenter graphiquement la distribution des effectifs.
 
 ##### Représentation
 
-Pour cette partie, nous avons utilisé la suite de valeur générée de manière aléatoire décrite ci-dessous. Par exemple, avec cette dernière, si l'on veut l’effectif cumulé de la 3ème valeur (v3), on fait $1 + 2 + 1$ soit $4$. Si on veut celle de la 5ème on fait $v3 + 3 + 2$ soit $9$. 
+Pour cette partie, nous avons utilisé la suite de valeurs générée de manière aléatoire décrite ci-dessous. Par exemple, avec cette dernière, si l'on veut l’effectif cumulé de la 3ème valeur (v3), on fait $1 + 2 + 1$ soit $4$. Si on veut celle de la 5ème on fait $v3 + 3 + 2$ soit $9$. 
 
 | x | y |
 |---|---|
@@ -164,9 +164,9 @@ La représentation graphique de l’effectif cumulé de la suite ci-dessus est l
 
 L'histogramme représente la répartition empirique d'une variable aléatoire en la représentant avec des colonnes. Ces dernières portent le nom de **classe**.
 
-Dans un histogramme, les classes représentées par un rectangle. La taille d'un rectangle représente la quantitée de valeur de cette classe.
+Dans un histogramme, les classes sont représentées par un rectangle. La hauteur d'un rectangle représente la quantitée de valeur de cette classe.
 
-Si l'on dispose d'une suite de valeur, il existe plusieurs formules pour choisir le nombre de classe. Entre autres, il y a celle de Herbert Sturges qui définie que pour un nombre de valeur $N$ on suggère un nombre de $K$ classes avec $K  = 1 + \log_{2}(N) \approx  1 + \frac{10}{3}\log_{10}(N)$ .
+Si l'on dispose d'une suite de valeur, il existe plusieurs formules pour choisir le nombre de classes. Entre autres, il y a celle de Herbert Sturges qui définit que pour un nombre de valeur $N$ on suggère un nombre de $K$ classes avec $K  = 1 + \log_{2}(N) \approx  1 + \frac{10}{3}\log_{10}(N)$ .
 
 On parle de l'amplitude d'un histogramme comme étant la plage sur laquelle est définie l'histogramme. Elle se calcule avec la formule suivante : $A = Vmax - Vmin$ .
 
@@ -176,29 +176,29 @@ L'histogramme est un moyen rapide et efficace de voir la répartition d'une cert
 
 ##### Représentation
 
-Pour le diagramme ci-dessous, nous avons utilisé les données relatives au poid des personnes de la classe ainsi que la librairie [matplotlib](https://matplotlib.org/) de python.
+Pour le diagramme ci-dessous, nous avons utilisé les données relatives au poids des personnes de la classe ainsi que la bibliothèque [matplotlib](https://matplotlib.org/) de python.
 
 ![](Histogram.png)
 
-Dans notre cas, nous n'avons pas eu besoin de calculer le nombre de classe ainsi que leurs largeurs car les données ont été prélever sur une plage de 5 en 5 ([45kg;50kg[,[50kg;55kg[, ...).
+Dans notre cas, nous n'avons pas eu besoin de calculer le nombre de classes ainsi que leurs largeurs car les données ont été prélevées sur une plage de 5 en 5 ([45kg;50kg[,[50kg;55kg[, ...).
 
 #### Diagramme en boîte / box-plot
 
 ##### Description
 
-Le diagramme en boîte, connu aussi sous le nom boîte à moustaches ou boîte de Tukey, permet de visualisé l'essentiel d'une série statistique.
+Le diagramme en boîte, connu aussi sous le nom de boîte à moustaches ou boîte de Tukey, permet de visualiser l'essentiel d'une série statistique.
 
 On y retrouve la médiane, les quartiles, la valeur miniamle et maximale.
 
 ##### Représentation
 
-Pour le diagramme ci-dessous, nous avons utilisé les données relatives au poid des personnes de la classe ainsi que la librairie [matplotlib](https://matplotlib.org/) de python.
+Pour le diagramme ci-dessous, nous avons utilisé les données relatives au poids des personnes de la classe ainsi que la bibliothèque [matplotlib](https://matplotlib.org/) de python.
 
 ![](BoxPlot.png)
 
 Sur ce diagramme, nous pouvons constater la médiane, barre orange dans la boite, la valeur minimale, trait du bas, la valeur maximale, trait du haut. La distance entre la valeur maximale ou la valeur minimale et la boîte représente chacune 25% de la totalité des valeurs. Cela fait que la boite en elle même représente 50% des valeurs.
 
-On peut aussi voir que la valeur `97,5` est considéré comme aberrante car elle n'est pas à l'intérieur de la moustache. Cela veut dire qu'elle mérite un réexamination pour voir si elle est vraiment aberrante ou non. Nous nous sommes rendu compte à terme que c'était bien le cas.
+On peut aussi voir que la valeur `97,5` est considérée comme aberrante car elle n'est pas à l'intérieur de la moustache. Cela veut dire qu'elle mérite une réexamination pour voir si elle est vraiment aberrante ou non. Nous nous sommes rendu compte à terme que c'était bien le cas.
 
 ## Statistiques descriptives bidimensionnelles
 
