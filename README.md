@@ -6,6 +6,7 @@
 ### Paramètres de position
 
 #### Moyenne
+
 La moyenne est un paramètre visant à résumer toutes les données en une seule valeur.
 
 - Symbole : $\bar x_A$ ou $\bar x$
@@ -13,7 +14,7 @@ La moyenne est un paramètre visant à résumer toutes les données en une seule
   - Non-pondérée : $\bar x_A = {1\over n} \sum_{i=0}^{n} x_i$
   - Pondérée :  $W = {1\over \sum_{i=0}^{n} w_i} \sum_{i=0}^{n} w_ix_i$
 
-Une bonne repésentation visuelle de la moyenne est celle d'un point qui minimise la distance cumulative avec toutes les données:
+Une bonne représentation visuelle de la moyenne est celle d'un point qui minimise la distance cumulative avec toutes les données:
 ![](Moyenne.png)
 
 On peut vouloir apporter une importance non uniforme aux données. Pour se faire, nous allons utiliser des poids qui vont multiplier chacune des valeurs de données.
@@ -80,11 +81,12 @@ La règle des 68-95-99,7 stipule que :
 #### Paramètres de dispersion relative
 Les paramètres de dispersion relative permettent de comparer deux distributions à ordre de grandeur ou d’unité de mesure différente.
 - Le coefficient interquartile relatif
-C.I.R.(X)  = (Xq3-Xq1)/ médiane X
+C.I.R.(X)  = ${Q_3 - Q_1}\over Q_2$
+- L'ecart absolue moyen 
 - L'écart moyen relatif
-E.M.R.(X)  = E.A.M.(X)  / moyenne(X)
-- Le coefficient de variation
-C.V.(X)  = s(X)  / moyenne(X)
+  $$
+  E.M.R.(X)  = $E.A.M.(X) \over \bar x
+  $$
 
 
 #### Mise en application sur notre jeu de données
@@ -117,7 +119,7 @@ C.V.(X)  = s(X)  / moyenne(X)
 
 ### Représentation
 
-Il existe de nombreux types de diagramme permettant de représenter des données statistiques. Certaines répresentations sont plus adaptées que d'autres, en fonction des types de données à analyser. Nous avons decidé de présenter et critiquer quelques diagrammes qui nous semblent pertinents à utiliser dans notre cas de figure.
+Il existe de nombreux types de diagramme permettant de représenter des données statistiques. Certaines réprsentations sont plus adaptées que d'autres, en fonction des types de données à analyser. Nous avons décidé de présenter et critiquer quelques diagrammes qui nous semblent pertinents à utiliser dans notre cas de figure.
 
 #### Diagramme en bâtons
 
