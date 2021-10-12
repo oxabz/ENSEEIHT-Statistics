@@ -187,12 +187,24 @@ Dans notre cas, nous n'avons pas eu besoin de calculer le nombre de classes ains
 
 ##### Histogramme à largeur variable
 
-Il est possible de choisir des largeurs variables pour chaque classe de l'histogramme afin d'affiner la représentation. On peut choisir de prendre des intervalles plus large lorsqu'ils contiennent peu d'effectif et des intervalles plus étroits là où la population est la plus importante.
+Il est possible de choisir des largeurs variables pour chaque classe de l'histogramme afin d'affiner la représentation. On peut choisir de prendre des intervalles plus larges lorsqu'elles contiennent peu d'effectif et des intervalles plus étroits là où la population est la plus importante.
 
-La difficulté est qu'on ne peut plus se contenter d'avoir la hauteur d'une barre proportionnelle à l'effectif de sa classe car c'est l'aire qui doit être proportionelle à l'effectif. Par exemple si on a deux classes :
+La difficulté est qu'on ne peut plus se contenter d'avoir la hauteur de chaque barre proportionnelle à l'effectif de leur classe car c'est l'aire qui doit être proportionelle à l'effectif et on la hauteur. Par exemple si on a deux classes :
 
-|Effectif|0-100|100-50|
+|Classe :|0-100|100-50|
 |--------|-----|------|
+|Effectif :|100|100|
+
+On pourrait être tenté de donner une hauteur égale aux deux barres de l'histogramme car leur effectif est le même. Cependant on remarque que l'intervalle 0-100 est deux fois plus grand que l'intervalle 100-50 donc pour que les aires soient égales il faut que la première barre soit deux fois moins haute que la seconde :
+
+![](HistogramVariableWidth.png)
+
+Ici une graduation verticale * une graduation horzontale correspond à un effectif de 50.
+
+On peut donc calculer l'effectif réel ainsi :
+
+* Pour la première barre : effectif = 50 * 2 (*car l'intervalle est sur 2 graduations*).
+* Pour la seconde : effectif = 100 * 1
 
 [YouTube : Les bons profs](https://www.youtube.com/watch?v=IWyaMBV76EE)
 
