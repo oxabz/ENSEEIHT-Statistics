@@ -1,5 +1,27 @@
-
 # Statistiques
+
+## Table des matières
+
+- [Table des matières](#table-des-matières)
+- [Statistiques descriptives unidimensionnelle (Charly)](#statistiques-descriptives-unidimensionnelle-charly)
+  - [Paramètres de position](#paramètres-de-position)
+  - [Paramètres de dispersion](#paramètres-de-dispersion)
+  - [Représentation](#représentation)
+- [Statistiques descriptives bidimensionnelles](#statistiques-descriptives-bidimensionnelles)
+  - [Histogrammes 2D](#histogrammes-2d)
+  - [Loi jointe](#loi-jointe)
+  - [Loi unidirectionnelle ou marginale](#loi-unidirectionnelle-ou-marginale)
+  - [Loi conditionnelle](#loi-conditionnelle)
+- [Notions de dépendance](#notions-de-dépendance)
+  - [Espérance](#espérance)
+  - [Covariance](#covariance)
+  - [Corrélation](#corrélation)
+  - [Matrice de variance-covariance](#matrice-de-variance-covariance)
+  - [Foret d'arbre de decision](#foret-darbre-de-decision)
+  - [Droite de régression](#droite-de-régression)
+- [Échantillonnage](#échantillonnage)
+  - [Introduction](#introduction)
+  - [Différents types d'échantillonnages](#différents-types-déchantillonnages)
 
 ## Statistiques descriptives unidimensionnelle (Charly)
 
@@ -80,13 +102,25 @@ La règle des 68-95-99,7 stipule que :
 
 #### Paramètres de dispersion relative
 Les paramètres de dispersion relative permettent de comparer deux distributions à ordre de grandeur ou d’unité de mesure différente.
-- Le coefficient interquartile relatif
-C.I.R.(X)  = ${Q_3 - Q_1}\over Q_2$
-- L'ecart absolue moyen 
-- L'écart moyen relatif
-  $$
-  E.M.R.(X)  = E.A.M.(X) \over \bar x
-  $$
+
+##### Le coefficient interquartile relatif
+Un indicateur de dispersion moins sensible aux extremes comparé  à l'ecart type.
+$$
+C.I.R.(X) = {Q_3 - Q_1} \over Q_2
+$$
+
+##### L'ecart absolue moyen
+Un indicateur de dispersion similaire à la variance mais avec un calcul plus simple.
+
+$$
+E.A.M (X) = {\frac {1}{n}}\sum _{i=1}^{n}\left|x_{i}-{\overline {x}}\right|
+$$
+
+##### L'écart moyen relatif
+Cette indicateur est similaire a l'ecart moyen relatif mais il est relatif a un point central souvent la moyenne ca donne une mesure relative qui peut etre comparé avec d'autres donnés
+$$
+E.M.R.(X)  = {E.A.M.(X) \over \bar x}
+$$
 
 
 #### Mise en application sur notre jeu de données
@@ -189,26 +223,28 @@ Dans notre cas, nous n'avons pas eu besoin de calculer le nombre de classes ains
 
 ##### Histogramme à largeur variable
 
-Il est possible de choisir des largeurs variables pour chaque classe de l'histogramme afin d'affiner la représentation. On peut choisir de prendre des intervalles plus larges lorsqu'elles contiennent peu d'effectif et des intervalles plus étroits là où la population est la plus importante.
+Il est possible de choisir des largeurs variables pour chaque classe de l'histogramme afin d'affiner la représentation. On peut choisir de prendre des intervalles plus larges là où la population est moins dense afin de réduire le bruit (données sont homogénéisées dans l'intervalle) et des intervalles plus étroits là où la population est la plus importante.
 
 La difficulté est qu'on ne peut plus se contenter d'avoir la hauteur de chaque barre proportionnelle à l'effectif de leur classe car c'est l'aire qui doit être proportionelle à l'effectif et on la hauteur. Par exemple si on a deux classes :
 
-|Classe :|0-100|100-50|
-|--------|-----|------|
-|Effectif :|100|100|
+| Classe :   | 0-100 | 100-50 |
+|------------|-------|--------|
+| Effectif : | 100   | 100    |
 
-On pourrait être tenté de donner une hauteur égale aux deux barres de l'histogramme car leur effectif est le même. Cependant on remarque que l'intervalle 0-100 est deux fois plus grand que l'intervalle 100-50 donc pour que les aires soient égales il faut que la première barre soit deux fois moins haute que la seconde :
+On aurait pu être tenté de donner une hauteur égale aux deux barres de l'histogramme car leur effectif est le même. Cependant on remarque que l'intervalle 0-100 est deux fois plus grand que l'intervalle 100-50 donc pour que les aires soient égales il faut que la première barre soit deux fois moins haute que la seconde :
 
 ![](HistogramVariableWidth.png)
 
-Ici une graduation verticale * une graduation horzontale correspond à un effectif de 50.
+Ici un bean, une case délimité par une graduation verticale et une graduation horzontale correspond à un effectif de 50.
 
 On peut donc calculer l'effectif réel ainsi :
 
 * Pour la première barre : effectif = 50 * 2 (*car l'intervalle est sur 2 graduations*).
 * Pour la seconde : effectif = 100 * 1
 
-[YouTube : Les bons profs](https://www.youtube.com/watch?v=IWyaMBV76EE)
+***Vidéo explicative YouTube - Les Bons Profs :***
+
+[https://www.youtube.com/watch?v=IWyaMBV76EE](https://www.youtube.com/watch?v=IWyaMBV76EE)
 
 #### Diagramme en boîte / box-plot
 
@@ -303,21 +339,61 @@ $$
 
 L'espérance mathématique correspond à une moyenne pondérée des résultats d'une expérience aléatoire dans laquelle les facteurs de pondération sont les probabilités d'obtenir chacun des résultats.
 
+Pour $X$, une variable aléatoire réelle prenant les valeurs $x1,...,x2$, la formule de l'espérance est la suivante:
 $$
-Var(X) =
+E(X) = \sum_{i=1}^{n} x_iP(X=x_i)
 $$
 
 ### Covariance
 
-$Cov(X,Y) = E[(X - E[X])(Y - E[Y])]$
 
+La covariance de deux variables aléatoires $X$ et $Y$ est définie par la formule suivante:
+$$
+Cov(X,Y) = E[(X - E[X])(Y - E[Y])] = E[XY] - E[X]E[Y]
+$$
 
+Si $X$ et $Y$ sont indépendante alors $Cov(X,Y)=0$.
 
+La covariance d’une variable avec elle-même (autocovariance) est tout simplement la variance. $Cov(X,X) = Var(X)$
 
-## Droite de régression
-#### Paramètres de position et de dispersionminime 
+### Corrélation
 
-La droite de régression linéaire est la droite de  forme y=ax+b qui minimisent l'écart au entre la droite et le nuage des points expérimentaux.
+La corrélation est une mesure basée sur la covariance. Elle détermine le degré auquel deux variables se déplacent de façon équivalente. Cette valeur est comprise entre -1 et 1. Plus la valeur de la corrélation est proche de 0, moins les deux variables sont liées. Ainsi si la corrélation est égale à 0, on peut dire que les deux variables sont indépendantes. À l'inverse, plus la valeur de la corrélation est proche de 1 ou -1, plus les variables sont liées (et donc plus il est simple de prédire l'une à partir de l'autre). Dans le cas d'une valeur positive on parle de corrélation positive, et de corrélation négative le cas échéant.
 
-On choisit en général le carré de la différence entre le point théorique et le point expérimental, c'est-à-dire (yi−(axi+b))2. L'écart total est donc : 
+$$
+\rho(X,Y) = \dfrac {Cov(X,Y)} {\sqrt(Var(X) Var(Y))}
+$$
 
+### Matrice de variance-covariance
+
+|Var(taille)|Cov(taille;poids)|
+|------|--------|
+|Cov(taille;poids)|Var(poids)|
+
+### Foret d'arbre de decision
+
+### Droite de régression
+#### Paramètres de position et de dispersion minime 
+
+La droite de régression linéaire est la droite de forme ${y=ax+b}$,qui minimise l'écart entre la droite et le nuage des points expérimentaux.
+Il y a plusieurs
+Nous choisissons en général le carré de la différence entre le point théorique et le point expérimental, c'est-à-dire (yi−(axi+b))2. L'écart total est donc : 
+
+## Échantillonnage
+
+### Introduction
+
+En général il n'est pas possible de réaliser une étude sur l'ensemble d'une population car le nombre d'éléments à étudier est trop important. Dans ce cas on a recours à l'échantillonnage.
+
+L’échantillonnage consiste à sélectionner une sous-partie représentative d’un ensemble d'individus ou, de manière générale, d'un groupe d'éléments varié, afin de produire une série d’échantillons à étudier.
+
+### Différents types d'échantillonnages
+
+- Échantillonnage aléatoire et simple : le tirage des individus de l'échantillon est aléatoire, c'est-à-dire que chaque individu a la même probabilité d'être choisi, et simple, c'est-à-dire que les choix des différents individus sont réalisés indépendamment les uns des autres.
+- Échantillonnage systématique : le premier individu est choisi de manière aléatoire, puis les suivants sont déterminés à intervalle régulier. Par exemple, dans un verger, on choisit au hasard le 7e pommier, puis les 27e, 47e, 67e, etc.
+- Échantillonnage stratifié : on subdivise la population en plusieurs parties avant de prendre l'échantillon.
+- Échantillonnage par quotas : la composition de l'échantillon doit être représentative de celle de la population selon certains critères jugés particulièrement importants. On utilise cette méthode pour réaliser les sondages d'opinions.
+
+#### Cas pratique : sondage des élections présidentielles
+
+En France on utilise la méthode des quotas. Elle consiste à interroger un échantillon représentatif de la population, en s'appuyant sur les statistiques de l'Insee.
