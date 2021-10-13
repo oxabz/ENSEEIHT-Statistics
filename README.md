@@ -408,9 +408,29 @@ $$
 ### Droite de régression
 #### Paramètres de position et de dispersion minime 
 
-La droite de régression linéaire est la droite de forme ${y=ax+b}$,qui minimise l'écart entre la droite et le nuage des points expérimentaux.
-Il y a plusieurs
-Nous choisissons en général le carré de la différence entre le point théorique et le point expérimental, c'est-à-dire (yi−(axi+b))2. L'écart total est donc : 
+La droite de régression linéaire est la droite de forme :
+${y=ax+ab}$
+Il s’agit de trouver la droite où la distance/l’écart  entre les points et de la droite est minimal.
+Il y a plusieurs méthodes pour trouver une solution, mais généralement on utilise la méthode des moindre carrée
+la méthode des moindres carrés : Consiste à trouver le carré de la différence entre le point théorique et le point expérimental : ${(y_i-(ax_i+b))^2}$
+
+l’écart total :
+
+
+Pour le calcul des coefficient a et b  on a un Théorème
+Si la variance Var(X) de la série statistique ${X=(xi)}$ est non-nulle, il existe une unique droite qui minimise la quantité J(a,b). Elle vérifie 
+${a=\frac{Cov(X,Y)}{Var(X)}}$ et ${b=\bar Y-a\bar X}$,
+où Cov(X,Y) désigne la covariance de X et de Y, ¯X la moyenne de (xi) et ¯Y la moyenne de (yi). 
+autre méthodes sont : La droite médiane-médiane
+
+https://www.alloprof.qc.ca/fr/eleves/bv/mathematiques/la-droite-de-regression-m1378
+
+ La droite médiane-médiane
+Cette méthode est très  efficace lorsqu'il y a un nombre important de données et que celles-ci sont très dispersées. Dans ce cas, la médiane vient relativiser le tout et diminue l'impact des données aberrantes dans les calculs.
+
+La droite de mayer:
+
+
 
 ## Échantillonnage
 
