@@ -2,59 +2,26 @@
 
 ## Table des matières
 
-- [Statistiques](#statistiques)
-  - [Table des matières](#table-des-matières)
-  - [Statistiques descriptives unidimensionnelle (Charly)](#statistiques-descriptives-unidimensionnelle-charly)
-    - [Paramètres de position](#paramètres-de-position)
-      - [Moyenne](#moyenne)
-      - [Quantile](#quantile)
-        - [Quartile](#quartile)
-        - [Médiane](#médiane)
-    - [Paramètres de dispersion](#paramètres-de-dispersion)
-      - [Paramètres de dispersion absolue](#paramètres-de-dispersion-absolue)
-        - [Étendue](#étendue)
-        - [Écart absolu moyen](#écart-absolu-moyen)
-        - [Variance](#variance)
-        - [Écart-type](#écart-type)
-      - [Paramètres de dispersion relative](#paramètres-de-dispersion-relative)
-        - [Le coefficient interquartile relatif](#le-coefficient-interquartile-relatif)
-        - [L'ecart absolue moyen](#lecart-absolue-moyen)
-        - [L'écart moyen relatif](#lécart-moyen-relatif)
-      - [Mise en application sur notre jeu de données](#mise-en-application-sur-notre-jeu-de-données)
-    - [Représentation](#représentation)
-      - [Diagramme en bâtons](#diagramme-en-bâtons)
-        - [Description](#description)
-        - [Représentation](#représentation-1)
-      - [Diagramme cumulatif](#diagramme-cumulatif)
-        - [Description](#description-1)
-        - [Représentation](#représentation-2)
-      - [Histogramme](#histogramme)
-        - [Description](#description-2)
-        - [Représentation](#représentation-3)
-        - [Histogramme à largeur variable](#histogramme-à-largeur-variable)
-      - [Diagramme en boîte / box-plot](#diagramme-en-boîte--box-plot)
-        - [Description](#description-3)
-        - [Représentation](#représentation-4)
-  - [Statistiques descriptives bidimensionnelles](#statistiques-descriptives-bidimensionnelles)
-    - [Histogrammes 2D](#histogrammes-2d)
-    - [Loi jointe](#loi-jointe)
-    - [Loi unidirectionnelle ou marginale](#loi-unidirectionnelle-ou-marginale)
-    - [Loi conditionnelle](#loi-conditionnelle)
-      - [Paramètres de position et de dispersion](#paramètres-de-position-et-de-dispersion)
-        - [Moyenne](#moyenne-1)
-        - [Moyenne de distance par rapport au point centrale](#moyenne-de-distance-par-rapport-au-point-centrale)
-  - [Notions de dépendance](#notions-de-dépendance)
-    - [Espérance](#espérance)
-    - [Covariance](#covariance)
-    - [Corrélation](#corrélation)
-    - [Matrice de variance-covariance](#matrice-de-variance-covariance)
-    - [Foret d'arbre de decision](#foret-darbre-de-decision)
-    - [Droite de régression](#droite-de-régression)
-      - [Paramètres de position et de dispersion minime](#paramètres-de-position-et-de-dispersion-minime)
-  - [Échantillonnage](#échantillonnage)
-    - [Introduction](#introduction)
-    - [Différents types d'échantillonnages](#différents-types-déchantillonnages)
-      - [Cas pratique : sondage des élections présidentielles](#cas-pratique--sondage-des-élections-présidentielles)
+- [Table des matières](#table-des-matières)
+- [Statistiques descriptives unidimensionnelle (Charly)](#statistiques-descriptives-unidimensionnelle-charly)
+  - [Paramètres de position](#paramètres-de-position)
+  - [Paramètres de dispersion](#paramètres-de-dispersion)
+  - [Représentation](#représentation)
+- [Statistiques descriptives bidimensionnelles](#statistiques-descriptives-bidimensionnelles)
+  - [Histogrammes 2D](#histogrammes-2d)
+  - [Loi jointe](#loi-jointe)
+  - [Loi unidirectionnelle ou marginale](#loi-unidirectionnelle-ou-marginale)
+  - [Loi conditionnelle](#loi-conditionnelle)
+- [Notions de dépendance](#notions-de-dépendance)
+  - [Espérance](#espérance)
+  - [Covariance](#covariance)
+  - [Corrélation](#corrélation)
+  - [Matrice de variance-covariance](#matrice-de-variance-covariance)
+  - [Foret d'arbre de decision](#foret-darbre-de-decision)
+  - [Droite de régression](#droite-de-régression)
+- [Échantillonnage](#échantillonnage)
+  - [Introduction](#introduction)
+  - [Différents types d'échantillonnages](#différents-types-déchantillonnages)
 
 ## Statistiques descriptives unidimensionnelle (Charly)
 
@@ -366,7 +333,7 @@ où
 c = (\bar x, \bar y)
 $$
 
-## Notions de dépendance
+## Notions de dépendance (EN COUR)
 
 ### Espérance
 
@@ -450,3 +417,4 @@ L’échantillonnage consiste à sélectionner une sous-partie représentative d
 #### Cas pratique : sondage des élections présidentielles
 
 En France on utilise la méthode des quotas. Elle consiste à interroger un échantillon représentatif de la population, en s'appuyant sur les statistiques de l'Insee.
+
