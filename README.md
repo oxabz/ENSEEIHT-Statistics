@@ -333,7 +333,7 @@ où
 c = (\bar x, \bar y)
 $$
 
-## Notions de dépendance
+## Notions de dépendance (EN COUR)
 
 ### Espérance
 
@@ -397,3 +397,4 @@ L’échantillonnage consiste à sélectionner une sous-partie représentative d
 #### Cas pratique : sondage des élections présidentielles
 
 En France on utilise la méthode des quotas. Elle consiste à interroger un échantillon représentatif de la population, en s'appuyant sur les statistiques de l'Insee.
+
