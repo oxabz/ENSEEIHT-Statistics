@@ -1,5 +1,12 @@
 # Statistiques
 
+> - Anna Stephanie
+> - Fanny Delnondedieu
+> - Quentin Gendarme
+> - Matthieu Legrand
+> - Mathis Grisel
+> - Charly Ginevra
+
 ## Table des matières
 
 - [Table des matières](#table-des-matières)
