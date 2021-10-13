@@ -85,7 +85,7 @@ C.I.R.(X)  = ${Q_3 - Q_1}\over Q_2$
 - L'ecart absolue moyen 
 - L'écart moyen relatif
   $$
-  E.M.R.(X)  = $E.A.M.(X) \over \bar x
+  E.M.R.(X)  = E.A.M.(X) \over \bar x
   $$
 
 
