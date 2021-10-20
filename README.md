@@ -9,30 +9,69 @@
 
 ## Table des matières
 
-- [Table des matières](#table-des-matières)
-- [Statistiques descriptives unidimensionnelle (Charly)](#statistiques-descriptives-unidimensionnelle-charly)
-  - [Paramètres de position](#paramètres-de-position)
-  - [Paramètres de dispersion](#paramètres-de-dispersion)
-  - [Représentation](#représentation)
-- [Statistiques descriptives bidimensionnelles](#statistiques-descriptives-bidimensionnelles)
-  - [Histogrammes 2D](#histogrammes-2d)
-  - [Loi jointe](#loi-jointe)
-  - [Loi unidirectionnelle ou marginale](#loi-unidirectionnelle-ou-marginale)
-  - [Loi conditionnelle](#loi-conditionnelle)
-- [Notions de dépendance](#notions-de-dépendance)
-  - [Espérance](#espérance)
-  - [Covariance](#covariance)
-  - [Corrélation](#corrélation)
-  - [Matrice de variance-covariance](#matrice-de-variance-covariance)
-  - [Foret d'arbre de decision](#foret-darbre-de-decision)
-  - [Droite de régression](#droite-de-régression)
-- [Échantillonnage](#échantillonnage)
-  - [Introduction](#introduction)
-  - [Différents types d'échantillonnages](#différents-types-déchantillonnages)
+- [Statistiques](#statistiques)
+  - [Table des matières](#table-des-matières)
+  - [Statistiques descriptives unidimensionnelle](#statistiques-descriptives-unidimensionnelle)
+    - [Paramètres de position](#paramètres-de-position)
+      - [Moyenne](#moyenne)
+      - [Quantile](#quantile)
+        - [Quartile](#quartile)
+        - [Médiane](#médiane)
+    - [Paramètres de dispersion](#paramètres-de-dispersion)
+      - [Paramètres de dispersion absolue](#paramètres-de-dispersion-absolue)
+        - [Étendue](#étendue)
+        - [Écart absolu moyen](#écart-absolu-moyen)
+        - [Variance](#variance)
+        - [Écart-type](#écart-type)
+      - [Paramètres de dispersion relative](#paramètres-de-dispersion-relative)
+        - [Le coefficient interquartile relatif](#le-coefficient-interquartile-relatif)
+        - [L'ecart absolue moyen](#lecart-absolue-moyen)
+        - [L'écart moyen relatif](#lécart-moyen-relatif)
+      - [Mise en application sur notre jeu de données](#mise-en-application-sur-notre-jeu-de-données)
+    - [Représentation](#représentation)
+      - [Diagramme en bâtons](#diagramme-en-bâtons)
+        - [Description](#description)
+        - [Représentation](#représentation-1)
+      - [Diagramme cumulatif](#diagramme-cumulatif)
+        - [Description](#description-1)
+        - [Représentation](#représentation-2)
+      - [Histogramme](#histogramme)
+        - [Description](#description-2)
+        - [Représentation](#représentation-3)
+        - [Histogramme à largeur variable](#histogramme-à-largeur-variable)
+      - [Diagramme en boîte / box-plot](#diagramme-en-boîte--box-plot)
+        - [Description](#description-3)
+        - [Représentation](#représentation-4)
+  - [Statistiques descriptives bidimensionnelles](#statistiques-descriptives-bidimensionnelles)
+    - [Histogrammes 2D](#histogrammes-2d)
+    - [Loi jointe](#loi-jointe)
+    - [Loi unidirectionnelle ou marginale](#loi-unidirectionnelle-ou-marginale)
+    - [Loi conditionnelle](#loi-conditionnelle)
+      - [Paramètres de position et de dispersion](#paramètres-de-position-et-de-dispersion)
+        - [Moyenne](#moyenne-1)
+        - [Moyenne de distance par rapport au point centrale](#moyenne-de-distance-par-rapport-au-point-centrale)
+  - [Notions de dépendance (EN COURS)](#notions-de-dépendance-en-cours)
+    - [Espérance](#espérance)
+    - [Covariance](#covariance)
+    - [Corrélation](#corrélation)
+    - [Matrice de variance-covariance](#matrice-de-variance-covariance)
+    - [Foret d'arbre de decision](#foret-darbre-de-decision)
+    - [Droite de régression](#droite-de-régression)
+      - [Paramètres de position et de dispersion minime](#paramètres-de-position-et-de-dispersion-minime)
+  - [Échantillonnage](#échantillonnage)
+    - [Introduction](#introduction)
+    - [Différents types d'échantillonnages](#différents-types-déchantillonnages)
+      - [Cas pratique : sondage des élections présidentielles](#cas-pratique--sondage-des-élections-présidentielles)
 
-## Statistiques descriptives unidimensionnelle (Charly)
+## Statistiques descriptives unidimensionnelle 
+
+les statistiques descriptives unidimensionnelle fournissent  une série de valeurs( paramètre et de dispersion) et de représentation ( diagramme et histogramme). Ceci permet d'analyser et decrire un échantillon ou une observation d'un variable.
+
+Dans notre exemple, il s'agit du poids de la classe ou la taile de la classe.
 
 ### Paramètres de position
+
+Les paramètres de position permettent de donner une valeur centrale vers quelle tend la série d'échantillon. Ceci permet de mieux conclure sur la distribution et ordre de grandeur de l'échantillon.
 
 #### Moyenne
 
@@ -52,6 +91,8 @@ On peut vouloir apporter une importance non uniforme aux données. Pour se faire
 
 Le quantile est un paramètre de position qui permet de connaître la valeur maximum des $N \over quantile$ premiers $x$
 
+ il permettent de diviser l'échantillion en $q_{quantile}$ de même nombre d'effectif.
+ 
 - Symbole : $q_{quantile}$
 - Formule : 
   $$
@@ -131,21 +172,17 @@ $$
 
 
 #### Mise en application sur notre jeu de données
+tableau des poids :
 
-| Masse (kg) \ Taille (cm) | 160-165 | 165-170 | 170-175 | 175-180 | 180-185 | 185-190 | Cumulés |
-| ------------------------ | ------- | ------- | ------- | ------- | ------- | ------- | ------- |
-| 45-50                    | 1       |         |         |         |         |         | 1       |
-| 50-55                    |         |         | 4       | 1       |         |         | 5       |
-| 55-60                    |         | 1       | 1       | 1       |         |         | 3       |
-| 60-65                    |         |         | 3       | 2       |         |         | 5       |
-| 65-70                    |         |         | 1       | 3       | 1       |         | 5       |
-| 70-75                    |         |         | 2       | 4       | 1       |         | 7       |
-| 75-80                    |         |         |         | 1       | 2       |         | 3       |
-| 80-85                    |         |         |         |         |         |         | 0       |
-| 85-90                    |         |         |         |         |         |         | 0       |
-| 90-95                    |         |         |         | 1       |         |         | 1       |
-| 95-100                   |         |         |         |         | 1       |         | 1       |
-| Cumulés                  | 1       | 1       | 11      | 13      | 5       | 0       | 31      |
+|poids | 45-50 |  50-55 | 55-60 | 60-65 | 65-70 | 70-75 | 75-80 | 80-85 | 85-90 | 90-95 | 95-100 |
+| ---  | ----- | -----  | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | -----  |
+| eff. | 1     |    5   |   3   |   5   |  5    |    7  |  3    |   0   |  0    |  1    |   1    |
+
+tableaux des tailles :
+
+|taille| 160-165 |  165-170 | 170-175 | 175-180 | 180-185 | 185-190 | 
+| ---  | ------- | -------  | ------- | ------- | ------- | ------- | 
+| eff. | 1       |    1     |   11     |   13   |  5      |    0    |  
 
 | Indicateur   | Taille (cm) | Masse (kg)  |
 | ------------ | ----------- | ----------- |
@@ -234,7 +271,7 @@ Il est possible de choisir des largeurs variables pour chaque classe de l'histog
 
 La difficulté est qu'on ne peut plus se contenter d'avoir la hauteur de chaque barre proportionnelle à l'effectif de leur classe car c'est l'aire qui doit être proportionelle à l'effectif et on la hauteur. Par exemple si on a deux classes :
 
-| Classe :   | 0-100 | 100-50 |
+| Classe :   | 0-100 | 50-100 |
 |------------|-------|--------|
 | Effectif : | 100   | 100    |
 
@@ -294,6 +331,20 @@ Les lois de probabilité de $X$ et $Y$ sont alors appelées lois marginales de $
 
 En particulier, lorsque $X$ et $Y$ sont à valeurs finies, la loi conjointe de $(X,Y)$ est l'ensemble des ${{P}((X=x_{i}) \cap (Y=y_{j})) }$
 
+| Masse (kg) \ Taille (cm) | 160-165 | 165-170 | 170-175 | 175-180 | 180-185 | 185-190 | Cumulés |
+| ------------------------ | ------- | ------- | ------- | ------- | ------- | ------- | ------- |
+| 45-50                    | 1       |         |         |         |         |         | 1       |
+| 50-55                    |         |         | 4       | 1       |         |         | 5       |
+| 55-60                    |         | 1       | 1       | 1       |         |         | 3       |
+| 60-65                    |         |         | 3       | 2       |         |         | 5       |
+| 65-70                    |         |         | 1       | 3       | 1       |         | 5       |
+| 70-75                    |         |         | 2       | 4       | 1       |         | 7       |
+| 75-80                    |         |         |         | 1       | 2       |         | 3       |
+| 80-85                    |         |         |         |         |         |         | 0       |
+| 85-90                    |         |         |         |         |         |         | 0       |
+| 90-95                    |         |         |         | 1       |         |         | 1       |
+| 95-100                   |         |         |         |         | 1       |         | 1       |
+| Cumulés                  | 1       | 1       | 11      | 13      | 5       | 0       | 31      |
 
 
 ### Loi unidirectionnelle ou marginale
@@ -314,6 +365,9 @@ ${{P}(X = x_{i},Y = y_{j})= {P} (X = x_{i}) \times {P} (Y = y_{j})}$
 sinon, dans le cas contraire, on a:
 
 ${{P}(X = x_{i},Y = y_{j})= {P} (X = x_{i}) \times {P} (Y = y_{j} | X = x_{i})}$
+
+
+On peut toujours retrouver la loi marginale, à partir d u tableau de la loi jointe. Il suffit de regarder la ligne ou la colonne "cumulés".
 
 ### Loi conditionnelle
 
@@ -340,7 +394,7 @@ où
 c = (\bar x, \bar y)
 $$
 
-## Notions de dépendance (EN COUR)
+## Notions de dépendance (EN COURS)
 
 ### Espérance
 
