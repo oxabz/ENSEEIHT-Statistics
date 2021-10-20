@@ -406,16 +406,36 @@ E(X) = \sum_{i=1}^{n} x_iP(X=x_i)
 $$
 
 ### Covariance
-
+La covariance permet de définir en quoi deux variables sont liée et leur sens de variantion dépend de l'un ou et de l'autre.
+C'est une mesure de variation de deux variables aléatoire.
 
 La covariance de deux variables aléatoires $X$ et $Y$ est définie par la formule suivante:
 $$
 Cov(X,Y) = E[(X - E[X])(Y - E[Y])] = E[XY] - E[X]E[Y]
 $$
 
-Si $X$ et $Y$ sont indépendante alors $Cov(X,Y)=0$.
+Si $X$ et $Y$ sont indépendante alors $Cov(X,Y)=0$, mais l'inverse n'est pas forcément vrai.
 
 La covariance d’une variable avec elle-même (autocovariance) est tout simplement la variance. $Cov(X,X) = Var(X)$
+
+certaines propriété intéressante :
+
+
+${COV(X,X)= var(x)}$
+
+${COV(X,Y) = COV(Y,X)}$
+${COV(cX,Y) = c*COV(X,Y)}$
+${COV(\sum_{i}^{} X_i , \sum_{j}^{} Y_j) = \sum_{i}^{} \sum_{j}^{} COV(X_i,Y_j)}$
+
+
+Calcul de la covariance :
+
+$$
+Cov(x,y)= \frac{1}{(n-1)} \sum_{i=1}^{n} (xi - \bar{x})(yi - \bar{y})
+$$
+
+Dans notre cas de figure :
+cov(poids,taille) = 
 
 ### Corrélation
 
@@ -427,11 +447,19 @@ $$
 
 ### Matrice de variance-covariance
 
-|Var(taille)|Cov(taille;poids)|
+|Var(poids)|Cov(taille;poids)|
 |------|--------|
-|Cov(taille;poids)|Var(poids)|
+|Cov(taille;poids)|Var(taille)|
+
+
+Pour notre série d'échantillon :
+
+
+![](matrice_covariance.png)
 
 ### Foret d'arbre de decision
+
+
 
 ### Droite de régression
 #### Paramètres de position et de dispersion minime 
