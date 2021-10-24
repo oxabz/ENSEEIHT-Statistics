@@ -406,44 +406,56 @@ E(X) = \sum_{i=1}^{n} x_iP(X=x_i)
 $$
 
 ### Covariance
-La covariance permet de définir en quoi deux variables sont liée et leur sens de variantion dépend de l'un ou et de l'autre.
-C'est une mesure de variation de deux variables aléatoire.
 
-La covariance de deux variables aléatoires $X$ et $Y$ est définie par la formule suivante:
+La covariance est une mesure de la relation linéaire entre deux varibales. C'est à dire, qu'elle nous permet de voir si deux variables aléatoires sont indépendantes (entre elles) ou pas.
+
+Pour $X$ et $Y$, deux variables aléatoires, la corvariance est définie par la formule suivante:
 $$
 Cov(X,Y) = E[(X - E[X])(Y - E[Y])] = E[XY] - E[X]E[Y]
 $$
 
+Cette dernière, un peu compliquée, peut se simplifier de la manière suivante:
+$$
+Cov(X,Y) = \frac{1}{(n-1)} \sum_{i=1}^{n} (xi - \bar{x})(yi - \bar{y}) 
+$$
+
+Si on calcule la covariance d'une variable aléatoire avec elle-même, on retombe sur la variance. On parle alors d'autocovariance. $Cov(X, X)=Var(X)$
+
+Cela peut ce démontrer aussi avec la formule "simplifiée". Si on prend deux variable aléatoires $X$ et $Y$, de tel sorte que $X = Y$, alors on se retrouve avec la formule de la variance.
+$$
+Cov(X,Y) = \frac{1}{(n-1)} \sum_{i=1}^{n} (xi - \bar{x})² 
+$$
+
 Si $X$ et $Y$ sont indépendante alors $Cov(X,Y)=0$, mais l'inverse n'est pas forcément vrai.
 
-La covariance d’une variable avec elle-même (autocovariance) est tout simplement la variance. $Cov(X,X) = Var(X)$
+La covariance est dite **symétrique** donc ${COV(X,Y) = COV(Y,X)}$. Ceci est démontrable avec le produit effectué, qui est commutable, dans la formule avec l'espérance.
 
-certaines propriété intéressante :
+La covariance est dite **bilinéaire**. Voici la formule générale: ${COV(\sum_{i}^{} X_i , \sum_{j}^{} Y_j) = \sum_{i}^{} \sum_{j}^{} COV(X_i,Y_j)}$. Dans d'autres termes cela permet de dire que $Cov(X+Y, Z) = Cov(X,Z) + Cov(Y,Z)$ et que ${COV(cX,Y) = c*COV(X,Y)}$.
 
+De la covariance, on peut savoir la "tendance" de nos variables aléatoires en fonction du signe du résultat.
 
-${COV(X,X)= var(x)}$
+![](Tendance-Covariance.png)
 
-${COV(X,Y) = COV(Y,X)}$
-${COV(cX,Y) = c*COV(X,Y)}$
-${COV(\sum_{i}^{} X_i , \sum_{j}^{} Y_j) = \sum_{i}^{} \sum_{j}^{} COV(X_i,Y_j)}$
+Mise à part ça c'est à peu près tout... La valeur elle ne veut pas dire grand chose. La covariance étant semsible à l'échelle si je prends les même variables aléatoires $X$ et $Y$ et que je multiplie leurs valeurs par un nombre quelconque, je n'aurai pas la même valeur de covariance. Elle même étant définie entre $-σ_xσ_y$ et $σ_xσ_y$.
 
-
-Calcul de la covariance :
-
-$$
-Cov(x,y)= \frac{1}{(n-1)} \sum_{i=1}^{n} (xi - \bar{x})(yi - \bar{y})
-$$
-
-Dans notre cas de figure :
-cov(poids,taille) = 
+Je ne peux pas non plus savoir si les points sont proche ou non de la ligne qui traverse le nuage. C'est là que la corrélation fait son entrée.
 
 ### Corrélation
 
-La corrélation est une mesure basée sur la covariance. Elle détermine le degré auquel deux variables se déplacent de façon équivalente. Cette valeur est comprise entre -1 et 1. Plus la valeur de la corrélation est proche de 0, moins les deux variables sont liées. Ainsi si la corrélation est égale à 0, on peut dire que les deux variables sont indépendantes. À l'inverse, plus la valeur de la corrélation est proche de 1 ou -1, plus les variables sont liées (et donc plus il est simple de prédire l'une à partir de l'autre). Dans le cas d'une valeur positive on parle de corrélation positive, et de corrélation négative le cas échéant.
+La corrélation est la normalisation de la covariance. Elle n'est donc pas sensible à l'échelle.
 
+Sa formule est la suivante:
 $$
-\rho(X,Y) = \dfrac {Cov(X,Y)} {\sqrt(Var(X) Var(Y))}
+\rho(X,Y) = \dfrac {Cov(X,Y)} {\sqrt(Var(X) Var(Y))} = \dfrac {Cov(X,Y)} {\sigma_X\sigma_Y} 
 $$
+
+Cette valeur est comprise entre -1 et 1.
+
+Plus sa valeur se rapproche de 1 ou de -1, plus les variables sont liées. Au contraire, plus sa valeur se rapproche de zéro, plus les données sont indépendantes.
+
+La figure suivante résume ce qui a été dit:
+
+![](Corrélation.png)
 
 ### Matrice de variance-covariance
 
