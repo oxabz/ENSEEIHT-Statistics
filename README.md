@@ -459,9 +459,30 @@ La figure suivante résume ce qui a été dit:
 
 ### Matrice de variance-covariance
 
+
 |Var(poids)|Cov(taille;poids)|
 |------|--------|
 |Cov(taille;poids)|Var(taille)|
+
+Dans le cas bidimensionnel, lorsqu'il y a corrélation entre deux variables et que l'on représente les données par des points sur un graphique on peut observer une dispersion de ces points en "ballon de rugby".
+
+On peut en déterminer le barycentre (moyenne des points).
+
+![](ballon_rugby_1.png)
+
+On peut ensuite chercher à centrer ce "ballon de rugby" sur le graphique. Pour cela on soustrait individuellement le point moyen à chaque point de donnée, on obtient une matrice de données centrées $Xc$
+
+![](ballon_rugby_2.png)
+
+Ensuite on peut chercher à incliner ces données, à leur appliquer une rotation afin de supprimer la corrélation.
+
+Pour ce faire on doit déterminer l'axe principal d'inertie (droite de régression) et le second axe principal (perpendiculaire au premier).
+
+On peut ensuite changer de base pour passer dans celle formée par les vecteurs $\vec{v_1}$ $\vec{v_2}$
+
+![](ballon_rugby_3.png)
+
+![](ballon_rugby_4.png)
 
 
 Pour notre série d'échantillon :
