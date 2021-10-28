@@ -55,7 +55,7 @@
     - [Covariance](#covariance)
     - [Corrélation](#corrélation)
     - [Matrice de variance-covariance](#matrice-de-variance-covariance)
-    - [Foret d'arbre de decision](#foret-darbre-de-decision)
+    - [Calcul des valeurs et vecteurs propres](#calcul-des-valeurs-et-vecteurs-propres)
     - [Droite de régression](#droite-de-régression)
       - [Paramètres de position et de dispersion minime](#paramètres-de-position-et-de-dispersion-minime)
   - [Échantillonnage](#échantillonnage)
@@ -192,8 +192,8 @@ tableaux des tailles :
 | Médiane      | 177,5       | 67,5        |
 | 1er quartile | 172,5       | 57,5        |
 | 3e  quartile | 177,5       | 72,5        |
-| Variance     | 31,36666667 | 5,763636364 |
-| Ecart-type   | 5,600595206 | 2,400757456 |
+| Variance     | 20,91397849 | 130,6989247 |
+| Ecart-type   | 4.573180347 | 11.43236304 |
 
 ### Représentation
 
@@ -407,9 +407,9 @@ $$
 
 ### Covariance
 
-La covariance est une mesure de la relation linéaire entre deux varibales. C'est à dire, qu'elle nous permet de voir si deux variables aléatoires sont indépendantes (entre elles) ou pas.
+La covariance est une mesure de la relation linéaire entre deux variables. C'est à dire, qu'elle nous permet de voir si deux variables aléatoires sont indépendantes (entre elles) ou pas.
 
-Pour $X$ et $Y$, deux variables aléatoires, la corvariance est définie par la formule suivante:
+Pour $X$ et $Y$, deux variables aléatoires, la covariance est définie par la formule suivante:
 $$
 Cov(X,Y) = E[(X - E[X])(Y - E[Y])] = E[XY] - E[X]E[Y]
 $$
@@ -421,14 +421,14 @@ $$
 
 Si on calcule la covariance d'une variable aléatoire avec elle-même, on retombe sur la variance. On parle alors d'autocovariance. $Cov(X, X)=Var(X)$
 
-Cela peut ce démontrer aussi avec la formule "simplifiée". Si on prend deux variable aléatoires $X$ et $Y$, de tel sorte que $X = Y$, alors on se retrouve avec la formule de la variance.
+Cela peut se démontrer aussi avec la formule "simplifiée". Si on prend deux variables aléatoires $X$ et $Y$, de telle sorte que $X = Y$, alors on se retrouve avec la formule de la variance.
 $$
 Cov(X,Y) = \frac{1}{(n-1)} \sum_{i=1}^{n} (xi - \bar{x})² 
 $$
 
-Si $X$ et $Y$ sont indépendante alors $Cov(X,Y)=0$, mais l'inverse n'est pas forcément vrai.
+Si $X$ et $Y$ sont indépendantes alors $Cov(X,Y)=0$, mais l'inverse n'est pas forcément vrai.
 
-La covariance est dite **symétrique** donc ${COV(X,Y) = COV(Y,X)}$. Ceci est démontrable avec le produit effectué, qui est commutable, dans la formule avec l'espérance.
+La covariance est dite **symétrique** donc ${COV(X,Y) = COV(Y,X)}$. Ceci est démontrable avec le produit effectué, qui est commutable dans la formule avec l'espérance.
 
 La covariance est dite **bilinéaire**. Voici la formule générale: ${COV(\sum_{i}^{} X_i , \sum_{j}^{} Y_j) = \sum_{i}^{} \sum_{j}^{} COV(X_i,Y_j)}$. Dans d'autres termes cela permet de dire que $Cov(X+Y, Z) = Cov(X,Z) + Cov(Y,Z)$ et que ${COV(cX,Y) = c*COV(X,Y)}$.
 
@@ -436,9 +436,9 @@ De la covariance, on peut savoir la "tendance" de nos variables aléatoires en f
 
 ![](Tendance-Covariance.png)
 
-Mise à part ça c'est à peu près tout... La valeur elle ne veut pas dire grand chose. La covariance étant semsible à l'échelle si je prends les même variables aléatoires $X$ et $Y$ et que je multiplie leurs valeurs par un nombre quelconque, je n'aurai pas la même valeur de covariance. Elle même étant définie entre $-σ_xσ_y$ et $σ_xσ_y$.
+Mise à part ça c'est à peu près tout... La valeur ne veut pas dire grand chose. La covariance étant sensible à l'échelle si je prends les même variables aléatoires $X$ et $Y$ et que je multiplie leurs valeurs par un nombre quelconque, je n'aurai pas la même valeur de covariance. Elle même étant définie entre $-σ_xσ_y$ et $σ_xσ_y$.
 
-Je ne peux pas non plus savoir si les points sont proche ou non de la ligne qui traverse le nuage. C'est là que la corrélation fait son entrée.
+Je ne peux pas non plus savoir si les points sont proches ou non de la ligne qui traverse le nuage. C'est là que la corrélation fait son entrée.
 
 ### Corrélation
 
@@ -453,16 +453,29 @@ Cette valeur est comprise entre -1 et 1.
 
 Plus sa valeur se rapproche de 1 ou de -1, plus les variables sont liées. Au contraire, plus sa valeur se rapproche de zéro, plus les données sont indépendantes.
 
-La figure suivante résume ce qui a été dit:
+La figure suivante en témoigne:
 
 ![](Corrélation.png)
 
 ### Matrice de variance-covariance
 
+La matrice de variance-covariance regroupe sur sa diagonale la variance de chaque variable aléatoire.
 
-|Var(poids)|Cov(taille;poids)|
-|------|--------|
-|Cov(taille;poids)|Var(taille)|
+Cette matrice est symétrique car pour rappel $Cov(X,Y)=Cov(Y,X)$.
+
+Voici un exemple général pour la construction d'une matrice variance-covariance.
+$$
+\begin{bmatrix} Var(X_1) & Cov(X_1, X_2) & ... & Cov(X_1,X_n) \\ Cov(X_2, X_1) & Var(X_2) & ... & Cov(X_2,X_n) \\ ... & ... & ... & ... \\ Cov(X_n, X_1) & Cov(X_n, X_2) & ... & Var(X_n) \end{bmatrix}
+$$
+
+Pour notre série d'échantillon, notre matrice peut être représentée de la manière ci-dessous.
+
+$$
+\begin{bmatrix} Var(taille) & Cov(taille;poids) \\ Cov(poids;taille) & Var(poids) \end{bmatrix}
+$$
+
+Après le calcul, nous obtenons ce résultat:
+![](matrice_covariance.png)
 
 Dans le cas bidimensionnel, lorsqu'il y a corrélation entre deux variables et que l'on représente les données par des points sur un graphique on peut observer une dispersion de ces points en "ballon de rugby".
 
@@ -470,27 +483,43 @@ On peut en déterminer le barycentre (moyenne des points).
 
 ![](ballon_rugby_1.png)
 
-On peut ensuite chercher à centrer ce "ballon de rugby" sur le graphique. Pour cela on soustrait individuellement le point moyen à chaque point de donnée, on obtient une matrice de données centrées $Xc$
+On peut ensuite chercher à centrer ce "ballon de rugby" sur le graphique. Il faut créer une matrice des données centrées $X^C_{n, p}$ à partir de notre matrice qui contient les données $X_{n,p}$ avec $n$ étant le nombre de lignes et $p$ le nombre de colonnes. Le principe est de soustraire la moyenne de chaque colonne à chaque valeur de la colonne correspondante.
+
+Formule:
+$$
+X^c_{n,p=2} = X_{n,p=2} - \begin{bmatrix} 1 \\ 1 \\ ... \\ 1 \end{bmatrix} \begin{bmatrix} \overline{x} & \overline{y}  \end{bmatrix} = \begin{bmatrix} x_1 - \overline{x} & y_1 - \overline{y}  \\ ... & ...  \\ x_n - \overline{x} & y_n - \overline{y} \end{bmatrix}
+$$
+
+Après, on obtient le résultat ci-dessous.
 
 ![](ballon_rugby_2.png)
 
 Ensuite on peut chercher à incliner ces données, à leur appliquer une rotation afin de supprimer la corrélation.
 
-Pour ce faire on doit déterminer l'axe principal d'inertie (droite de régression) et le second axe principal (perpendiculaire au premier).
-
-On peut ensuite changer de base pour passer dans celle formée par les vecteurs $\vec{v_1}$ $\vec{v_2}$
+Pour se faire on doit déterminer l'axe principal d'inertie, qui correspond à la droite de régression, et le second axe principal, perpendiculaire au premier.
 
 ![](ballon_rugby_3.png)
 
+On peut ensuite changer de base pour passer dans celle formée par les vecteurs $\vec{v_1}$ $\vec{v_2}$
+
+Les vecteurs $\vec{v_1}$ $\vec{v_2}$ sont les valeurs propres de la matrice de covariance.
+
+### Calcul des valeurs et vecteurs propres
+
+Pour calculer les valeurs propres il faut résoudre le système :
+
+$Det(A-(\lambda)*I)=0$
+
+Pour une matrice 2X2 on a une équation de degré 2 à résoudre.
+
+Pour notre cas de figure : 11.64152491 et 139.97137832
+
+On a aussi les vecteurs propres : 
+- [-0.96319528, -0.26880261]
+- [ 0.26880261, -0.96319528]
+
+
 ![](ballon_rugby_4.png)
-
-
-Pour notre série d'échantillon :
-
-
-![](matrice_covariance.png)
-
-### Foret d'arbre de decision
 
 
 
@@ -499,27 +528,27 @@ Pour notre série d'échantillon :
 
 La droite de régression linéaire est la droite de forme :
 ${y=ax+ab}$
-Il s’agit de trouver la droite où la distance/l’écart  entre les points et de la droite est minimal.
-Il y a plusieurs méthodes pour trouver une solution, mais généralement on utilise la méthode des moindre carrée
-la méthode des moindres carrés : Consiste à trouver le carré de la différence entre le point théorique et le point expérimental : ${(y_i-(ax_i+b))^2}$
+Il s’agit de trouver la droite où la distance/l’écart entre les points et la droite est minimal.
+Il y a plusieurs méthodes pour trouver une solution, mais généralement on utilise la méthode des moindres carrés, qui consiste à trouver le carré de la différence entre le point théorique et le point expérimental : ${(y_i-(ax_i+b))^2}$
 
 l’écart total :
 
 
-Pour le calcul des coefficient a et b  on a un Théorème
+Pour le calcul des coefficients a et b, on a un Théorème.
 Si la variance Var(X) de la série statistique ${X=(xi)}$ est non-nulle, il existe une unique droite qui minimise la quantité J(a,b). Elle vérifie 
 ${a=\frac{Cov(X,Y)}{Var(X)}}$ et ${b=\bar Y-a\bar X}$,
 où Cov(X,Y) désigne la covariance de X et de Y, ¯X la moyenne de (xi) et ¯Y la moyenne de (yi). 
-autre méthodes sont : La droite médiane-médiane
+autres méthodes sont : La droite médiane-médiane
 
 https://www.alloprof.qc.ca/fr/eleves/bv/mathematiques/la-droite-de-regression-m1378
 
  La droite médiane-médiane
-Cette méthode est très  efficace lorsqu'il y a un nombre important de données et que celles-ci sont très dispersées. Dans ce cas, la médiane vient relativiser le tout et diminue l'impact des données aberrantes dans les calculs.
+Cette méthode est très efficace lorsqu'il y a un nombre important de données et que celles-ci sont très dispersées. Dans ce cas, la médiane vient relativiser le tout et diminue l'impact des données aberrantes dans les calculs. En effet, la médiane-médiane est réputée plus robuste que des méthodes telles que la méthode des moindres carrés. De plus, cette méthode nécessite peut de calcul. Il suffit de faire 2 découpages, une étant la valeur médiane sur X (avec les données rangées par ordre croissant) et l'autre sur la médiane de l'axe Y. 
 
 La droite de mayer:
+Etant donnée les calculs de moyenne, cette methode est plus rapide à executer. Cependant, contrairement à la droite médiane-médiane, la droite de mayer est très sensible aux données aberrantes. Les deux methodes sont donc complémentaire en fonction du type de donnée utilisé.
 
-
+Pour trouver la droite de mayer, on commence par classer les données par ordre de taille selon un critère puis les séparer en deux groupes de meme taille si possible. Ensuite on calcul les moyennes des points de chaques groupe. La droite de mayer est la droite passant par les deux moyennes calculées. 
 
 ## Échantillonnage
 
@@ -539,4 +568,3 @@ L’échantillonnage consiste à sélectionner une sous-partie représentative d
 #### Cas pratique : sondage des élections présidentielles
 
 En France on utilise la méthode des quotas. Elle consiste à interroger un échantillon représentatif de la population, en s'appuyant sur les statistiques de l'Insee.
-
