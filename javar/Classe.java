@@ -1,4 +1,4 @@
-package java;
+package javar;
 
 public class Classe<T> {
     public final T valeur;

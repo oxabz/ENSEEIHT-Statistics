@@ -1,4 +1,4 @@
-package java;
+package javar;
 
 public class CoupleTailleMasse {
     public final double taille;
