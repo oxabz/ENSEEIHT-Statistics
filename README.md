@@ -1,6 +1,6 @@
 # Statistiques
 
-> - Anna Stephanie
+> - Anna Stephany
 > - Fanny Delnondedieu
 > - Quentin Gendarme
 > - Matthieu Legrand
@@ -9,59 +9,9 @@
 
 ## Table des matières
 
-- [Statistiques](#statistiques)
-  - [Table des matières](#table-des-matières)
-  - [Statistiques descriptives unidimensionnelle](#statistiques-descriptives-unidimensionnelle)
-    - [Paramètres de position](#paramètres-de-position)
-      - [Moyenne](#moyenne)
-      - [Quantile](#quantile)
-        - [Quartile](#quartile)
-        - [Médiane](#médiane)
-    - [Paramètres de dispersion](#paramètres-de-dispersion)
-      - [Paramètres de dispersion absolue](#paramètres-de-dispersion-absolue)
-        - [Étendue](#étendue)
-        - [Écart absolu moyen](#écart-absolu-moyen)
-        - [Variance](#variance)
-        - [Écart-type](#écart-type)
-      - [Paramètres de dispersion relative](#paramètres-de-dispersion-relative)
-        - [Le coefficient interquartile relatif](#le-coefficient-interquartile-relatif)
-        - [L'ecart absolue moyen](#lecart-absolue-moyen)
-        - [L'écart moyen relatif](#lécart-moyen-relatif)
-      - [Mise en application sur notre jeu de données](#mise-en-application-sur-notre-jeu-de-données)
-    - [Représentation](#représentation)
-      - [Diagramme en bâtons](#diagramme-en-bâtons)
-        - [Description](#description)
-        - [Représentation](#représentation-1)
-      - [Diagramme cumulatif](#diagramme-cumulatif)
-        - [Description](#description-1)
-        - [Représentation](#représentation-2)
-      - [Histogramme](#histogramme)
-        - [Description](#description-2)
-        - [Représentation](#représentation-3)
-        - [Histogramme à largeur variable](#histogramme-à-largeur-variable)
-      - [Diagramme en boîte / box-plot](#diagramme-en-boîte--box-plot)
-        - [Description](#description-3)
-        - [Représentation](#représentation-4)
-  - [Statistiques descriptives bidimensionnelles](#statistiques-descriptives-bidimensionnelles)
-    - [Histogrammes 2D](#histogrammes-2d)
-    - [Loi jointe](#loi-jointe)
-    - [Loi unidirectionnelle ou marginale](#loi-unidirectionnelle-ou-marginale)
-    - [Loi conditionnelle](#loi-conditionnelle)
-      - [Paramètres de position et de dispersion](#paramètres-de-position-et-de-dispersion)
-        - [Moyenne](#moyenne-1)
-        - [Moyenne de distance par rapport au point centrale](#moyenne-de-distance-par-rapport-au-point-centrale)
-  - [Notions de dépendance (EN COURS)](#notions-de-dépendance-en-cours)
-    - [Espérance](#espérance)
-    - [Covariance](#covariance)
-    - [Corrélation](#corrélation)
-    - [Matrice de variance-covariance](#matrice-de-variance-covariance)
-    - [Calcul des valeurs et vecteurs propres](#calcul-des-valeurs-et-vecteurs-propres)
-    - [Droite de régression](#droite-de-régression)
-      - [Paramètres de position et de dispersion minime](#paramètres-de-position-et-de-dispersion-minime)
-  - [Échantillonnage](#échantillonnage)
-    - [Introduction](#introduction)
-    - [Différents types d'échantillonnages](#différents-types-déchantillonnages)
-      - [Cas pratique : sondage des élections présidentielles](#cas-pratique--sondage-des-élections-présidentielles)
+[TOC]
+
+
 
 ## Statistiques descriptives unidimensionnelle 
 
@@ -92,7 +42,7 @@ On peut vouloir apporter une importance non uniforme aux données. Pour se faire
 Le quantile est un paramètre de position qui permet de connaître la valeur maximum des $N \over quantile$ premiers $x$
 
  il permettent de diviser l'échantillion en $q_{quantile}$ de même nombre d'effectif.
- 
+
 - Symbole : $q_{quantile}$
 - Formule : 
   $$
@@ -394,7 +344,7 @@ où
 c = (\bar x, \bar y)
 $$
 
-## Notions de dépendance (EN COURS)
+## Notions de dépendance 
 
 ### Espérance
 
@@ -550,6 +500,12 @@ Etant donnée les calculs de moyenne, cette methode est plus rapide à executer.
 
 Pour trouver la droite de mayer, on commence par classer les données par ordre de taille selon un critère puis les séparer en deux groupes de meme taille si possible. Ensuite on calcul les moyennes des points de chaques groupe. La droite de mayer est la droite passant par les deux moyennes calculées. 
 
+## Simulation 
+
+Fait sur un Google Colab : https://colab.research.google.com/drive/1jyI4THpgjfKi763jVLNzr_3Pt4XDo3gk?usp=sharing
+
+Alternativement copie fait du pdf à la fin du pdf
+
 ## Échantillonnage
 
 ### Introduction
@@ -568,3 +524,4 @@ L’échantillonnage consiste à sélectionner une sous-partie représentative d
 #### Cas pratique : sondage des élections présidentielles
 
 En France on utilise la méthode des quotas. Elle consiste à interroger un échantillon représentatif de la population, en s'appuyant sur les statistiques de l'Insee.
+
