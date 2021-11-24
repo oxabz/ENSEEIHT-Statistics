@@ -477,7 +477,7 @@ On a aussi les vecteurs propres :
 #### Paramètres de position et de dispersion minime 
 
 La droite de régression linéaire est la droite de forme :
-${y=ax+ab}$
+${y=ax+b}$
 Il s’agit de trouver la droite où la distance/l’écart entre les points et la droite est minimal.
 Il y a plusieurs méthodes pour trouver une solution, mais généralement on utilise la méthode des moindres carrés, qui consiste à trouver le carré de la différence entre le point théorique et le point expérimental : ${(y_i-(ax_i+b))^2}$
 
@@ -485,14 +485,23 @@ l’écart total :
 
 
 Pour le calcul des coefficients a et b, on a un Théorème.
-Si la variance Var(X) de la série statistique ${X=(xi)}$ est non-nulle, il existe une unique droite qui minimise la quantité J(a,b). Elle vérifie 
-${a=\frac{Cov(X,Y)}{Var(X)}}$ et ${b=\bar Y-a\bar X}$,
-où Cov(X,Y) désigne la covariance de X et de Y, ¯X la moyenne de (xi) et ¯Y la moyenne de (yi). 
-autres méthodes sont : La droite médiane-médiane
+Si la variance Var(X) de la série statistique ${X=(x_i)}$ est non-nulle, il existe une unique droite qui minimise la quantité J(a,b).
+
+Elle vérifie :
+
+${a=\frac{Cov(X,Y)}{Var(X)}}$
+
+${b=\bar y-a\bar x}$
+
+
+où Cov(X,Y) désigne la covariance de X et de Y, ${\bar x}$ la moyenne des $\bar x_i$ et ${\bar y}$ la moyenne de $\bar y_i$. 
+
+Les autres méthodes sont : La droite médiane-médiane
 
 https://www.alloprof.qc.ca/fr/eleves/bv/mathematiques/la-droite-de-regression-m1378
 
- La droite médiane-médiane
+La droite médiane-médiane
+
 Cette méthode est très efficace lorsqu'il y a un nombre important de données et que celles-ci sont très dispersées. Dans ce cas, la médiane vient relativiser le tout et diminue l'impact des données aberrantes dans les calculs. En effet, la médiane-médiane est réputée plus robuste que des méthodes telles que la méthode des moindres carrés. De plus, cette méthode nécessite peut de calcul. Il suffit de faire 2 découpages, une étant la valeur médiane sur X (avec les données rangées par ordre croissant) et l'autre sur la médiane de l'axe Y. 
 
 La droite de mayer:
