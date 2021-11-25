@@ -86,7 +86,17 @@ $\frac{1}{n}\sum_{i=1}^n \left|x_i - \overline{x}\right|$
 ##### Variance
 La variance est une mesure de la dispersion des valeurs d'un échantillon ou d'une distribution de probabilité.
 - Symbole : $V$
-- Formule :  $\frac{1}{n}\sum_{i=1}^n (x_i-\overline{x})^2 = \frac{1}{n}\sum_{i=1}^n x_i^2 - \overline{x}^2$
+- Formule :  $\frac{1}{n}\sum_{i=1}^n n_i\times(x_i-\overline{x})^2$
+- Autre formule :  $E[X^2]-E[X]^2 = \frac{1}{n}\sum_{i=1}^n(n_i \times x_i^2) - (\bar x)^2$
+
+![variance](variance.png)
+
+$x_i$ : valeur de la classe $i$ | Exemple : taille = 177.5cm
+
+$n_i$ : effectif de la classe $i$ | Exemple : _**13**_ étudiants mesurent 177.5cm
+
+$\bar x$ : moyenne des valeurs
+
 
 ##### Écart-type
 L'écart-type est une mesure de dispersion par rapport à la moyenne.
