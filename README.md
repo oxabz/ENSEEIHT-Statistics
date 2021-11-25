@@ -59,6 +59,19 @@ Un quartile est un quantile de valeur spécifique. Il existe trois quartiles Q1,
   - $Q2$
   - $Q3$
 
+
+Exemple: Pour Q1, le rang de la valeur qui nous intéresse est $\frac{31}{4} = 7.75 \approx 8$ -> 8ème rang
+
+Q1= 172.5
+
+Pour Q3, le rang de la valeur qui nous intéresse est $\frac{31}{4} \times 3 = 23.25 \approx 24$ -> 24ème rang
+
+Q3= 177.5
+
+*On arrondi toujours à l'entier supérieur.*
+
+L’intervalle interquartile est donc : $Q3 - Q1 = 177.5-172.5 = 5$
+
 ##### Médiane
 
 La médiane est le Q2. Elle indique la valeur centrale des données. Elle est souvent utilisée de pair avec la moyenne arithmétique car elle n'est pas sensible aux extrêmes.
@@ -66,6 +79,16 @@ La médiane est le Q2. Elle indique la valeur centrale des données. Elle est so
 Si la médiane est supérieure à la moyenne, alors il y a de petites valeurs dans l'extrême et inversement lorsque la médiane est inférieure.
 
 - Symbole : $Q2$ ou $Me$
+
+Calcul : 
+
+Si l'effectif est pair : la médiane est la valeur situé à l'indice $\frac{effectif}{2}$. Par exemple si $N=30$ , la médiane est la valeur située à la 15e position des valeurs rangées par ordre croissant.
+
+Si l'effectif est impair : la médiane est la moyenne des valeurs situées aux indices $\frac{effectif-1}{2}$ et $\frac{effectif+1}{2}$. Par exemple pour $N=31$ on a $N/2=15.5$ donc la médiane est la moyenne des valeurs situées aux indices 15 et 16.
+
+![mediane.](mediane.png)
+
+
 
 ### Paramètres de dispersion
 
